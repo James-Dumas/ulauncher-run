@@ -9,7 +9,7 @@ import subprocess
 class RunExtension(Extension):
 
     def __init__(self):
-        super(DemoExtension, self).__init__()
+        super(RunExtension, self).__init__()
         self.subscribe(KeywordQueryEvent, KeywordQueryEventListener())
 
 
