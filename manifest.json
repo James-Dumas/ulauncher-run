@@ -1,0 +1,21 @@
+{
+  "manifest_version": "1",
+  "api_version": "1",
+  "name": "Run extension",
+  "description": "Runs a shell command",
+  "developer_name": "James Dumas",
+  "icon": "images/icon.png",
+  "options": {
+    "query_debounce": 1
+  },
+  "preferences": [
+    {
+      "id": "run_kw",
+      "type": "keyword",
+      "name": "Run",
+      "description": "Runs a shell command",
+      "default_value": "run"
+    }
+  ]
+}
+
