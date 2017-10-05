@@ -17,7 +17,16 @@ class KeywordQueryEventListener(EventListener):
 
     def on_event(self, event, extension):
         command = event.query.split(" ", 1)[1]
-        subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        items = [
+                ExtensionResultItem(
+                    icon="images/icon.png",
+                    name="Run a shell command",
+                    description="Run '%s'" % command,
+                    on_enter=subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT),
+                    ),
+                ]
+
+        return RenderResultListAction(items)
 
 if __name__ == '__main__':
     RunExtension().run()
