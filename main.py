@@ -33,7 +33,7 @@ class ItemEnterEventListener(EventListener):
 
     def on_event(self, event, extension):
         data = event.get_data()
-        subprocess.Popen(data.split(" "), shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+        subprocess.Popen(shlex.split(data), shell=True)
 
         return RenderResultListAction([])
 
