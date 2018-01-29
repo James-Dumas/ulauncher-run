@@ -20,7 +20,7 @@ class KeywordQueryEventListener(EventListener):
 
     def on_event(self, event, extension):
         data = event.get_argument()
-        print("1: " + data)
+        print("1: " + str(data))
         items = [
                 ExtensionResultItem(
                     icon="images/icon.png",
@@ -36,7 +36,7 @@ class ItemEnterEventListener(EventListener):
 
     def on_event(self, event, extension):
         data = event.get_data() or ""
-        print("2: " + data)
+        print("2: " + str(data))
         print("3: " + str(shlex.split(data))
         subprocess.Popen(shlex.split(data), shell=True)
 
