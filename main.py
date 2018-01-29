@@ -24,7 +24,7 @@ class KeywordQueryEventListener(EventListener):
                 ExtensionResultItem(
                     icon="images/icon.png",
                     name="Run a shell command",
-                    description='Run "%s" in shell' % event.get_argument(),
+                    description="" if not data else 'Run "%s" in shell' % data,
                     on_enter=ExtensionCustomAction(data),
                     ),
                 ]
