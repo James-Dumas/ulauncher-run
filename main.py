@@ -6,7 +6,6 @@ from ulauncher.api.shared.item.ExtensionResultItem import ExtensionResultItem
 from ulauncher.api.shared.action.RenderResultListAction import RenderResultListAction
 from ulauncher.api.shared.action.HideWindowAction import HideWindowAction
 import subprocess
-import shlex
 
 class RunExtension(Extension):
 
@@ -35,7 +34,7 @@ class ItemEnterEventListener(EventListener):
 
     def on_event(self, event, extension):
         data = event.get_data() or ""
-        subprocess.Popen(shlex.split(data), shell=True)
+        subprocess.Popen(data, shell=True)
 
         return RenderResultListAction([])
 
