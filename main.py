@@ -24,7 +24,7 @@ class KeywordQueryEventListener(EventListener):
                 ExtensionResultItem(
                     icon="images/icon.png",
                     name="Run a shell command",
-                    description="Run '%s'" % data,
+                    description='Run "%s" in shell' % event.get_argument(),
                     on_enter=ExtensionCustomAction(data),
                     ),
                 ]
@@ -34,7 +34,7 @@ class KeywordQueryEventListener(EventListener):
 class ItemEnterEventListener(EventListener):
 
     def on_event(self, event, extension):
-        data = event.get_data()
+        data = event.get_data() or ""
         subprocess.Popen(shlex.split(data), shell=True)
 
         return RenderResultListAction([])
